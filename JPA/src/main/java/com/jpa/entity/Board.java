@@ -1,4 +1,4 @@
-package com.jpa.board.entity;
+package com.jpa.entity;
 
 import java.time.LocalDateTime;
 
@@ -12,12 +12,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Getter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED) // 접근제어자 Protected와 같음, 같은 패키지 내에서만 접근이 가능
+@Entity											// Entity 클래스는 Public ,Protected 접근만 가능
 public class Board {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Mysql auto_increment
     private Long id; // PK
 
     private String title; // 제목
@@ -41,6 +41,13 @@ public class Board {
         this.writer = writer;
         this.hits = hits;
         this.deleteYn = deleteYn;
+    }
+    
+    public void update(String title, String content, String writer) {
+        this.title = title;
+        this.content = content;
+        this.writer = writer;
+        this.modifiedDate = LocalDateTime.now();
     }
 
 }
