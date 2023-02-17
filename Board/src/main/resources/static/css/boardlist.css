@@ -1,0 +1,107 @@
+#container {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: black;
+	font-weight: bold;
+}
+
+#blist_main_con {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.blist_main_box {
+	margin-top:200px;
+	width: 1200px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.blist_cont_box{
+	width:1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.blist_cont{
+	width:1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border:1px solid #e2e2e2;
+	color:white;
+}
+
+.blist_cont_tag1{
+	width:100px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.blist_cont_tag2{
+	width:300px;
+	height:50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.blist_cont_tag2 a{
+	color:white;
+}
+.blist_cont_tag3{
+	width:200px;
+	height:50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.blist_cont_main{
+	width:1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border:1px solid #e2e2e2;
+	color:white;
+	flex-direction: column;
+}
+.blist_cont_pagingbtn{
+	width:1000px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.blist_cont_pagingbtn a{
+	width:30px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color:white;
+}
+.blist_cont_addBtn{
+	width:1000px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.blist_cont_addBtn a{
+	width:1000px;
+	height: 50px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
+	
+	
+}

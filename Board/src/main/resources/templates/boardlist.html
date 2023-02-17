@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<link th:href="@{/css/reset2.css}" rel="stylesheet" />
+<link th:href="@{/css/reset.css}" rel="stylesheet" />
+<link th:href="@{/css/header.css}" rel="stylesheet" />
+<link th:href="@{/css/footer.css}" rel="stylesheet" />
+<link th:href="@{/css/boardlist.css}" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<header id="index_header_con">
+			<div class="index_hed_box">
+				<div class="index_hed_tag1 tag">
+					<a href="#">11</a>
+				</div>
+				<div class="index_hed_tag2 tag">
+					<a href="#">22</a>
+				</div>
+				<div class="index_hed_tag3 tag">
+					<a href="#">33</a>
+				</div>
+				<div class="index_hed_tag4 tag">
+					<a href="#">1441</a>
+				</div>
+			</div>
+		</header>
+		<main id="blist_main_con">
+			<div class="blist_main_box">
+				<div class="blist_cont_box">
+					<div class="blist_cont">
+						<div class="blist_cont_tag1">
+							<p>글 번호</p>
+						</div>
+						<div class="blist_cont_tag2">
+							<p>제목</p>
+						</div>
+						<div class="blist_cont_tag3">
+							<p>작성자</p>
+						</div>
+						<div class="blist_cont_tag1">
+							<p>조회수</p>
+						</div>
+						<div class="blist_cont_tag2">
+							<p>등록일</p>
+						</div>
+					</div>
+					<div class="blist_cont_main">
+						<div class="blist_cont" th:if="${pageableList}!=null"
+							th:each="board:${pageableList['content']}">
+							<div class="blist_cont_tag1">
+								<p th:text="${board.id}">글 번호</p>
+							</div>
+							<div class="blist_cont_tag2">
+								<a href="#">
+									<p th:text="${board.title}">제목</p>
+								</a>
+							</div>
+							<div class="blist_cont_tag3">
+								<p th:text="${board.writer}">작성자</p>
+							</div>
+							<div class="blist_cont_tag1">
+								<p th:text="${board.hits}">조회수</p>
+							</div>
+							<div class="blist_cont_tag2">
+								<p th:text="${board.createdDate}">작성일</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="blist_cont_pagingbtn">
+					<a th:href="|/boards/${numStat.index}/10|" th:each="num, numStat : ${#numbers.sequence(1,pageableList['TotalPages'])}"
+						th:text="${numStat.count}"></a>
+				</div>
+				<div class="blist_cont_addBtn">
+					<a href="/boards/form">게시글 등록</a>
+				</div>
+			</div>
+
+		</main>
+		<footer id="index_footer_con"></footer>
+	</div>
+
+
+</body>
+</html>

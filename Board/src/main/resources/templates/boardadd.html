@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>Insert title here</title>
+<link th:href="@{/css/reset2.css}" rel="stylesheet" />
+<link th:href="@{/css/reset.css}" rel="stylesheet" />
+<link th:href="@{/css/header.css}" rel="stylesheet" />
+<link th:href="@{/css/footer.css}" rel="stylesheet" />
+<link th:href="@{/css/boardadd.css}" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="container">
+		<header id="index_header_con">
+			<div class="index_hed_box">
+				<div class="index_hed_tag1 tag">
+					<a href="#">11</a>
+				</div>
+				<div class="index_hed_tag2 tag">
+					<a href="#">22</a>
+				</div>
+				<div class="index_hed_tag3 tag">
+					<a href="#">33</a>
+				</div>
+				<div class="index_hed_tag4 tag">
+					<a href="#">1441</a>
+				</div>
+			</div>
+		</header>
+		<main id="badd_main_con">
+			<div class="badd_main_box">
+				<form th:action="|/boards|" th:method="post" class="badd_main_form">
+					<div class="badd_title">
+						<span>게시글 등록</span>
+					</div>
+					<label class="badd_form_text">
+						<span>작성자 : </span>
+						<input type="text" name="writer" />
+					</label>
+					<label class="badd_form_text">
+						<span>제목 : </span>
+						<input type="text" name="title" />
+					</label>
+					<label class="badd_form_text">
+						<span>내용</span>
+						<textarea name="content"></textarea>
+					</label>
+
+					<div class="badd_form_btn">
+						<button type="submit">등록</button>
+					</div>
+				</form>
+			</div>
+		</main>
+		<footer id="index_footer_con"></footer>
+	</div>
+
+
+</body>
+</html>

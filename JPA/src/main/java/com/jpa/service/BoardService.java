@@ -1,4 +1,4 @@
-package com.jpa.service;
+	package com.jpa.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -44,7 +44,6 @@ public class BoardService {
 	 */
 	@Transactional
 	public Long update(final Long id, final BoardRequest params) {
-
 		Board entity = boardRepository.findById(id).orElseThrow(() -> new CustomException(ErrorCode.POSTS_NOT_FOUND));
 		entity.update(params.getTitle(), params.getContent(), params.getWriter());
 		return id;
